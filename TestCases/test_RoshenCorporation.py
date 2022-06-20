@@ -10,7 +10,7 @@ class Test_RoshenCorporation:
 
     base_login_url = ReadDataConfiguraton.get_application_url()
 
-    def test_accept_cookit(self, setup):
+    def test_accept_cookie(self, setup):
         self.driver = setup
         self.driver.get(self.base_login_url)
         self.roshencorporation = RoshenCorporation(self.driver)
