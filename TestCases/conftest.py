@@ -16,20 +16,14 @@ def setup(browser):
         driver = webdriver.Chrome(ChromeDriverManager().install())
         driver.maximize_window()
         driver.implicitly_wait(10)
-        wait = WebDriverWait(driver, 10)
-        actions = ActionChains(driver)
     elif browser == 'firefox':
         driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
         driver.maximize_window()
         driver.implicitly_wait(10)
-        wait = WebDriverWait(driver, 10)
-        actions = ActionChains(driver)
     else:
         driver = webdriver.Chrome(ChromeDriverManager().install())
         driver.maximize_window()
         driver.implicitly_wait(10)
-        wait = WebDriverWait(driver, 10)
-        actions = ActionChains(driver)
     return driver
 
 
