@@ -46,6 +46,7 @@ class Test_BoxedSweets:
         self.boxedsweets.click_slider_arrow()
         self.boxedsweets.click_boxed_sweets()
         self.boxedsweets.click_sub_category_downarrow()
+        time.sleep(3)
         boxedsweets_text = self.wait.until(EC.presence_of_element_located((By.XPATH, self.boxed_sweets_info_xpath)))
         if "They say that life is like a box of chocolates: you never know what is waiting for you inside. However, if the box is filled with chocolates by ROSHEN, then you can expect the best only." in boxedsweets_text.text:
             assert True
