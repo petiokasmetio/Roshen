@@ -9,9 +9,13 @@ class AboutRoshen:
     boxed_sweets_downarrow_xpah = "//div[@class='slider-arr-dwn js-arr-down-all']"
     boxed_sweets_info_xpath = "//p[contains(text(),'They say that life is like a box of chocolates: yo')]"
     category_chocolates_xpath = "//a[@href='en/en/about-roshen/about-products/chocolates-and-chocolate-bars']//div[@class='border-animate-content']"
+    category_caramels_and_candies_xpath = "//a[@href='en/en/about-roshen/about-products/caramel-and-candies']//div[@class='border-animate-content']"
 
     def __init__(self, driver):
         self.driver = driver
+
+    def click_caramels_and_candies(self):
+        self.driver.find_element_by_xpath(self.category_caramels_and_candies_xpath).click()
 
     def click_chocolates_and_bars(self):
         self.driver.find_element_by_xpath(self.category_chocolates_xpath).click()

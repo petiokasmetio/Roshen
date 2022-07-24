@@ -1,10 +1,6 @@
-import time
-from telnetlib import EC
-from TestCases import conftest
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 import pytest
-from selenium.webdriver.support import wait
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.common.exceptions import NoSuchElementException
 from Pages.RoshenCorporation import RoshenCorporation
@@ -34,7 +30,7 @@ class Test_ChocolatesAndBars:
         self.driver.close()
         return True
 
-    @pytest.mark.petiokasmetio
+
     def test_chocolates_info(self, setup):
         self.driver = setup
         self.wait = WebDriverWait(self.driver, 10)

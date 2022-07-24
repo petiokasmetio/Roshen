@@ -7,6 +7,7 @@ class RoshenCorporation:
     cookie_xpath = '//button[@id="accept"]'
     dropdown_about_roshen_xpath = '//a[@class="menu-head has-submenu"][normalize-space()="About ROSHEN"]'
     dropdown_option_about_products_xpath = '//ul[@class="sub-menu"]//a[normalize-space()="About Products"]'
+    about_products_downarrow_xpath = "//div[@class='slider-arr-dwn js-arr-down-all']"
 
     def __init__(self, driver):
         self.driver = driver
@@ -18,4 +19,7 @@ class RoshenCorporation:
         actions = ActionChains(self.driver)
         actions.move_to_element(self.driver.find_element_by_xpath(self.dropdown_about_roshen_xpath)).move_to_element(
             self.driver.find_element_by_xpath(self.dropdown_option_about_products_xpath)).click().perform()
+
+    def about_products_downarrow(self):
+        self.driver.find_element_by_xpath(self.about_products_downarrow_xpath).click()
 
