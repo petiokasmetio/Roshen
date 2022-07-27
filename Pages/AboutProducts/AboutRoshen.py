@@ -1,5 +1,6 @@
 import time
 
+from selenium.common import NoSuchElementException
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -16,10 +17,31 @@ class AboutRoshen:
     category_chocolates_xpath = "//a[@href='en/en/about-roshen/about-products/chocolates-and-chocolate-bars']//div[@class='border-animate-content']"
     category_caramels_and_candies_xpath = "//a[@href='en/en/about-roshen/about-products/caramel-and-candies']//div[@class='border-animate-content']"
     p_caramels_text_xpath = "//p[contains(text(),'ROSHEN Corporation is an absolute leader in carame')]"
+    category_biscuits_wafers_xpath = "//a[@href='en/en/about-roshen/about-products/biscuits-and-wafers']//div[@class='border-animate-content']"
 
     def __init__(self, driver):
         self.driver = driver
         self.wait = WebDriverWait(self.driver, 10)
+
+    def h1_biscuits_text(self):
+        time.sleep(1)
+        element = self.driver.find_element("xpath", self.h1_categories_xpath).get_attribute(self.h1_categories_xpath)
+        if "Biscuits and wafers" in element:
+            assert True
+            self.driver.close()
+        else:
+            self.driver.close()
+            assert False
+    # def h1_biscuits_wafers(self):
+    #     try:
+    #         self.h1_categories_xpath
+    #     except NoSuchElementException:
+    #         return False
+    #     self.driver.close()
+    #     return True
+
+    def click_biscuits_wafers(self):
+        self.driver.find_element("xpath", self.category_biscuits_wafers_xpath).click()
 
     def paragraph_candies_text(self):
         time.sleep(3)

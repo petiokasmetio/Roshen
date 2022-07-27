@@ -52,7 +52,6 @@ class Test_CaramelAndCandies:
         self.driver.close()
         return True
 
-    @pytest.mark.petiokasmetio
     def test_caramels_p_text(self, setup):
         self.driver = setup
         self.driver.get(self.base_url)
